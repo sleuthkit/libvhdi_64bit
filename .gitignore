@@ -1,3 +1,17 @@
+*.sdf
+*.log
+
+/msvscpp/libvhdi.sdf
+
+# IntelliSense data
+/msvscpp/*.ncb
+/msvscpp/*.sdf
+
+# Visual Studio user options
+/msvscpp/*.suo
+*.sln.cache
+/msvscpp/*.opensdf
+
 /msvscpp/ipch/*
 /msvscpp/libbfio/Debug/*
 /msvscpp/libbfio/Release/*
@@ -91,5 +105,3 @@
 /msvscpp/Release/*
 /msvscpp/VSDebug/*
 /msvscpp/x64/*
-
-**/*.log
