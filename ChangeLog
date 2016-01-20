@@ -1,0 +1,173 @@
+TODO
+* fix info_handle_file_fprint: unable to retrieve parent filename string size.
+* complete multi-threading support
+* complete differential images support
+
+Tests:
+* Test concurrent read from diff image and parent
+* Add verify test
+
+* debug
+  - print disk type
+  - print feature flags
+  - print creator application
+  - print creator host system
+  - print disk geometry
+* what about geomerty and disk size calculation
+* read data block + bitmap at once
+* read backup file footer ?
+
+20160108
+* 2016 update
+
+20151220
+* updated dependencies
+* changes for deployment
+
+20151205
+* worked on Python bindings
+
+20150905
+* updated dependencies
+
+20150125
+* vhdiinfo: fix for handling missing parent filename
+
+20150110
+* updated version for release
+
+20150105
+* 2015 update
+
+20141229
+* updated dpkg files
+* updated dependencies
+* updated .gitignore
+
+20141221
+* worked on Python 3 support
+* worked on tests
+
+20141205
+* worked on test scripts
+
+20141129
+* code clean up
+
+20141114
+* code clean up
+
+20141105
+* worked on multi-threading support
+* removed deprecated functions
+  - libvhdi_file_read_random
+  - pyvhdi file.read_random
+
+20141029
+* bug fix in Python-bindings
+
+20141027
+* changes for deployment
+
+20141021
+* changes for deployment
+
+20140929
+* removed README.macosx
+* changes for project site move
+
+20140803
+* bug fix in Python-bindings
+* updated dependencies
+
+20140330
+* worked on Python bindings
+* worked on setup.py
+
+20140317
+* fix in synclibs.sh for missing libfguid
+* updated libfdata
+* worked on setup.py
+
+20140201
+* worked on Python bindings
+
+20140119
+* 2014 update
+* updated dependencies
+
+20131211
+* worked on Python bindings
+
+20131210
+* updated dependencies
+* worked on Python bindings
+* fixed issue in mount handle
+  - for empty basename
+  - for vhd files with parent path instead of filename
+
+20131017
+* updated dependencies
+
+20131013
+* updated dependencies
+
+20130922
+* updated msvscpp files
+* removed libfvalue
+
+20130916
+* updated dependencies
+* worked on libcthreads build support
+* code clean up
+
+20130831
+* updated dependencies
+
+20130514
+* changes in parent functions
+
+20130512
+* updated dependencies
+* changes to macosx files
+* worked on Python bindings
+* worked on debug output
+* worked on differential image support
+* worked on Dokan support
+
+20130501
+* vhdimount: worked on differential images support
+
+20121209
+* changes for fdata refactor
+
+20121208
+* changes for fdata refactor
+
+20121202
+* changes for fdata refactor
+
+20121201
+* updated dependencies
+
+20120929
+* updated dependencies
+
+20120922
+* code clean up
+
+20120920
+* updated dependencies
+
+20120918
+* added support for fixed disk image
+
+20120917
+* fix for debian rules file
+
+20120914
+* fix for bitmap size, needs to be a multitude of sector size
+
+20120913
+* initial version
+

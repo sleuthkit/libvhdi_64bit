@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="libvhdi">
+</Property><Property Name="Solution File" Value="C:\cygwin64\home\elivis\libvhdi_64bit\msvscpp\libvhdi.sln">
+</Property><Property Name="Date" Value="Wednesday, January 20, 2016">
+</Property><Property Name="Time" Value="9:47 AM">
+</Property></Properties><Event ErrorLevel="0" Project="libfcache" Source="libfcache\libfcache.vcproj" Description="Converting project file 'C:\cygwin64\home\elivis\libvhdi_64bit\msvscpp\libfcache\libfcache.vcproj'.">
+</Event><Event ErrorLevel="1" Project="libfcache" Source="libfcache\libfcache.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="0" Project="libfcache" Source="libfcache\libfcache.vcproj" Description="Done converting to new project file 'C:\cygwin64\home\elivis\libvhdi_64bit\msvscpp\libfcache\libfcache.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="libfcache" Source="libfcache\libfcache.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="pyvhdi" Source="pyvhdi\pyvhdi.vcproj" Description="Converting project file 'C:\cygwin64\home\elivis\libvhdi_64bit\msvscpp\pyvhdi\pyvhdi.vcproj'.">
+</Event><Event ErrorLevel="1" Project="pyvhdi" Source="pyvhdi\pyvhdi.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="1" Project="pyvhdi" Source="pyvhdi\pyvhdi.vcproj" Description="MSB8012: $(TargetExt) ('.dll') does not match the Linker's OutputFile property value 'C:\cygwin64\home\elivis\libvhdi_64bit\msvscpp\Release\pyvhdi.pyd' ('.pyd') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetExt) property value matches the value specified in %(Link.OutputFile).">
+</Event><Event ErrorLevel="1" Project="pyvhdi" Source="pyvhdi\pyvhdi.vcproj" Description="MSB8012: $(TargetPath) ('C:\cygwin64\home\elivis\libvhdi_64bit\msvscpp\Release\pyvhdi.dll') does not match the Linker's OutputFile property value 'C:\cygwin64\home\elivis\libvhdi_64bit\msvscpp\Release\pyvhdi.pyd' ('C:\cygwin64\home\elivis\libvhdi_64bit\msvscpp\Release\pyvhdi.pyd') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).">
+</Event><Event ErrorLevel="1" Project="pyvhdi" Source="pyvhdi\pyvhdi.vcproj" Description="MSB8012: $(TargetExt) ('.dll') does not match the Linker's OutputFile property value 'C:\cygwin64\home\elivis\libvhdi_64bit\msvscpp\VSDebug\pyvhdi.pyd' ('.pyd') in project configuration 'VSDebug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetExt) property value matches the value specified in %(Link.OutputFile).">
+</Event><Event ErrorLevel="1" Project="pyvhdi" Source="pyvhdi\pyvhdi.vcproj" Description="MSB8012: $(TargetPath) ('C:\cygwin64\home\elivis\libvhdi_64bit\msvscpp\VSDebug\pyvhdi.dll') does not match the Linker's OutputFile property value 'C:\cygwin64\home\elivis\libvhdi_64bit\msvscpp\VSDebug\pyvhdi.pyd' ('C:\cygwin64\home\elivis\libvhdi_64bit\msvscpp\VSDebug\pyvhdi.pyd') in project configuration 'VSDebug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).">
+</Event><Event ErrorLevel="0" Project="pyvhdi" Source="pyvhdi\pyvhdi.vcproj" Description="Done converting to new project file 'C:\cygwin64\home\elivis\libvhdi_64bit\msvscpp\pyvhdi\pyvhdi.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="pyvhdi" Source="pyvhdi\pyvhdi.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="libfguid" Source="libfguid\libfguid.vcproj" Description="Converting project file 'C:\cygwin64\home\elivis\libvhdi_64bit\msvscpp\libfguid\libfguid.vcproj'.">
+</Event><Event ErrorLevel="1" Project="libfguid" Source="libfguid\libfguid.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="0" Project="libfguid" Source="libfguid\libfguid.vcproj" Description="Done converting to new project file 'C:\cygwin64\home\elivis\libvhdi_64bit\msvscpp\libfguid\libfguid.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="libfguid" Source="libfguid\libfguid.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="vhdi_test_open_close" Source="vhdi_test_open_close\vhdi_test_open_close.vcproj" Description="Converting project file 'C:\cygwin64\home\elivis\libvhdi_64bit\msvscpp\vhdi_test_open_close\vhdi_test_open_close.vcproj'.">
+</Event><Event ErrorLevel="1" Project="vhdi_test_open_close" Source="vhdi_test_open_close\vhdi_test_open_close.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="0" Project="vhdi_test_open_close" Source="vhdi_test_open_close\vhdi_test_open_close.vcproj" Description="Done converting to new project file 'C:\cygwin64\home\elivis\libvhdi_64bit\msvscpp\vhdi_test_open_close\vhdi_test_open_close.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="vhdi_test_open_close" Source="vhdi_test_open_close\vhdi_test_open_close.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="vhdi_test_read" Source="vhdi_test_read\vhdi_test_read.vcproj" Description="Converting project file 'C:\cygwin64\home\elivis\libvhdi_64bit\msvscpp\vhdi_test_read\vhdi_test_read.vcproj'.">
+</Event><Event ErrorLevel="1" Project="vhdi_test_read" Source="vhdi_test_read\vhdi_test_read.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="0" Project="vhdi_test_read" Source="vhdi_test_read\vhdi_test_read.vcproj" Description="Done converting to new project file 'C:\cygwin64\home\elivis\libvhdi_64bit\msvscpp\vhdi_test_read\vhdi_test_read.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="vhdi_test_read" Source="vhdi_test_read\vhdi_test_read.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="vhdi_test_seek" Source="vhdi_test_seek\vhdi_test_seek.vcproj" Description="Converting project file 'C:\cygwin64\home\elivis\libvhdi_64bit\msvscpp\vhdi_test_seek\vhdi_test_seek.vcproj'.">
+</Event><Event ErrorLevel="1" Project="vhdi_test_seek" Source="vhdi_test_seek\vhdi_test_seek.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="0" Project="vhdi_test_seek" Source="vhdi_test_seek\vhdi_test_seek.vcproj" Description="Done converting to new project file 'C:\cygwin64\home\elivis\libvhdi_64bit\msvscpp\vhdi_test_seek\vhdi_test_seek.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="vhdi_test_seek" Source="vhdi_test_seek\vhdi_test_seek.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="libclocale" Source="libclocale\libclocale.vcproj" Description="Converting project file 'C:\cygwin64\home\elivis\libvhdi_64bit\msvscpp\libclocale\libclocale.vcproj'.">
+</Event><Event ErrorLevel="1" Project="libclocale" Source="libclocale\libclocale.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="0" Project="libclocale" Source="libclocale\libclocale.vcproj" Description="Done converting to new project file 'C:\cygwin64\home\elivis\libvhdi_64bit\msvscpp\libclocale\libclocale.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="libclocale" Source="libclocale\libclocale.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="libvhdi" Source="libvhdi\libvhdi.vcproj" Description="Converting project file 'C:\cygwin64\home\elivis\libvhdi_64bit\msvscpp\libvhdi\libvhdi.vcproj'.">
+</Event><Event ErrorLevel="1" Project="libvhdi" Source="libvhdi\libvhdi.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="0" Project="libvhdi" Source="libvhdi\libvhdi.vcproj" Description="Done converting to new project file 'C:\cygwin64\home\elivis\libvhdi_64bit\msvscpp\libvhdi\libvhdi.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="libvhdi" Source="libvhdi\libvhdi.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="libbfio" Source="libbfio\libbfio.vcproj" Description="Converting project file 'C:\cygwin64\home\elivis\libvhdi_64bit\msvscpp\libbfio\libbfio.vcproj'.">
+</Event><Event ErrorLevel="1" Project="libbfio" Source="libbfio\libbfio.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="0" Project="libbfio" Source="libbfio\libbfio.vcproj" Description="Done converting to new project file 'C:\cygwin64\home\elivis\libvhdi_64bit\msvscpp\libbfio\libbfio.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="libbfio" Source="libbfio\libbfio.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="libcfile" Source="libcfile\libcfile.vcproj" Description="Converting project file 'C:\cygwin64\home\elivis\libvhdi_64bit\msvscpp\libcfile\libcfile.vcproj'.">
+</Event><Event ErrorLevel="1" Project="libcfile" Source="libcfile\libcfile.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="0" Project="libcfile" Source="libcfile\libcfile.vcproj" Description="Done converting to new project file 'C:\cygwin64\home\elivis\libvhdi_64bit\msvscpp\libcfile\libcfile.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="libcfile" Source="libcfile\libcfile.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="libcthreads" Source="libcthreads\libcthreads.vcproj" Description="Converting project file 'C:\cygwin64\home\elivis\libvhdi_64bit\msvscpp\libcthreads\libcthreads.vcproj'.">
+</Event><Event ErrorLevel="1" Project="libcthreads" Source="libcthreads\libcthreads.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="0" Project="libcthreads" Source="libcthreads\libcthreads.vcproj" Description="Done converting to new project file 'C:\cygwin64\home\elivis\libvhdi_64bit\msvscpp\libcthreads\libcthreads.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="libcthreads" Source="libcthreads\libcthreads.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="libcpath" Source="libcpath\libcpath.vcproj" Description="Converting project file 'C:\cygwin64\home\elivis\libvhdi_64bit\msvscpp\libcpath\libcpath.vcproj'.">
+</Event><Event ErrorLevel="1" Project="libcpath" Source="libcpath\libcpath.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="0" Project="libcpath" Source="libcpath\libcpath.vcproj" Description="Done converting to new project file 'C:\cygwin64\home\elivis\libvhdi_64bit\msvscpp\libcpath\libcpath.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="libcpath" Source="libcpath\libcpath.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="libcstring" Source="libcstring\libcstring.vcproj" Description="Converting project file 'C:\cygwin64\home\elivis\libvhdi_64bit\msvscpp\libcstring\libcstring.vcproj'.">
+</Event><Event ErrorLevel="1" Project="libcstring" Source="libcstring\libcstring.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="0" Project="libcstring" Source="libcstring\libcstring.vcproj" Description="Done converting to new project file 'C:\cygwin64\home\elivis\libvhdi_64bit\msvscpp\libcstring\libcstring.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="libcstring" Source="libcstring\libcstring.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="libuna" Source="libuna\libuna.vcproj" Description="Converting project file 'C:\cygwin64\home\elivis\libvhdi_64bit\msvscpp\libuna\libuna.vcproj'.">
+</Event><Event ErrorLevel="1" Project="libuna" Source="libuna\libuna.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="0" Project="libuna" Source="libuna\libuna.vcproj" Description="Done converting to new project file 'C:\cygwin64\home\elivis\libvhdi_64bit\msvscpp\libuna\libuna.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="libuna" Source="libuna\libuna.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="libcerror" Source="libcerror\libcerror.vcproj" Description="Converting project file 'C:\cygwin64\home\elivis\libvhdi_64bit\msvscpp\libcerror\libcerror.vcproj'.">
+</Event><Event ErrorLevel="1" Project="libcerror" Source="libcerror\libcerror.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="0" Project="libcerror" Source="libcerror\libcerror.vcproj" Description="Done converting to new project file 'C:\cygwin64\home\elivis\libvhdi_64bit\msvscpp\libcerror\libcerror.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="libcerror" Source="libcerror\libcerror.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="libcnotify" Source="libcnotify\libcnotify.vcproj" Description="Converting project file 'C:\cygwin64\home\elivis\libvhdi_64bit\msvscpp\libcnotify\libcnotify.vcproj'.">
+</Event><Event ErrorLevel="1" Project="libcnotify" Source="libcnotify\libcnotify.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="0" Project="libcnotify" Source="libcnotify\libcnotify.vcproj" Description="Done converting to new project file 'C:\cygwin64\home\elivis\libvhdi_64bit\msvscpp\libcnotify\libcnotify.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="libcnotify" Source="libcnotify\libcnotify.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="vhdiinfo" Source="vhdiinfo\vhdiinfo.vcproj" Description="Converting project file 'C:\cygwin64\home\elivis\libvhdi_64bit\msvscpp\vhdiinfo\vhdiinfo.vcproj'.">
+</Event><Event ErrorLevel="1" Project="vhdiinfo" Source="vhdiinfo\vhdiinfo.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="0" Project="vhdiinfo" Source="vhdiinfo\vhdiinfo.vcproj" Description="Done converting to new project file 'C:\cygwin64\home\elivis\libvhdi_64bit\msvscpp\vhdiinfo\vhdiinfo.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="vhdiinfo" Source="vhdiinfo\vhdiinfo.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="vhdimount" Source="vhdimount\vhdimount.vcproj" Description="Converting project file 'C:\cygwin64\home\elivis\libvhdi_64bit\msvscpp\vhdimount\vhdimount.vcproj'.">
+</Event><Event ErrorLevel="1" Project="vhdimount" Source="vhdimount\vhdimount.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="0" Project="vhdimount" Source="vhdimount\vhdimount.vcproj" Description="Done converting to new project file 'C:\cygwin64\home\elivis\libvhdi_64bit\msvscpp\vhdimount\vhdimount.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="vhdimount" Source="vhdimount\vhdimount.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="libcsystem" Source="libcsystem\libcsystem.vcproj" Description="Converting project file 'C:\cygwin64\home\elivis\libvhdi_64bit\msvscpp\libcsystem\libcsystem.vcproj'.">
+</Event><Event ErrorLevel="1" Project="libcsystem" Source="libcsystem\libcsystem.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="1" Project="libcsystem" Source="libcsystem\libcsystem.vcproj" Description="The following file(s) were found multiple times in the project/filter and duplicates were ignored: '..\..\libcsystem\libcsystem_libcstring.h'.">
+</Event><Event ErrorLevel="0" Project="libcsystem" Source="libcsystem\libcsystem.vcproj" Description="Done converting to new project file 'C:\cygwin64\home\elivis\libvhdi_64bit\msvscpp\libcsystem\libcsystem.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="libcsystem" Source="libcsystem\libcsystem.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="libfdata" Source="libfdata\libfdata.vcproj" Description="Converting project file 'C:\cygwin64\home\elivis\libvhdi_64bit\msvscpp\libfdata\libfdata.vcproj'.">
+</Event><Event ErrorLevel="1" Project="libfdata" Source="libfdata\libfdata.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="0" Project="libfdata" Source="libfdata\libfdata.vcproj" Description="Done converting to new project file 'C:\cygwin64\home\elivis\libvhdi_64bit\msvscpp\libfdata\libfdata.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="libfdata" Source="libfdata\libfdata.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="libcdata" Source="libcdata\libcdata.vcproj" Description="Converting project file 'C:\cygwin64\home\elivis\libvhdi_64bit\msvscpp\libcdata\libcdata.vcproj'.">
+</Event><Event ErrorLevel="1" Project="libcdata" Source="libcdata\libcdata.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="0" Project="libcdata" Source="libcdata\libcdata.vcproj" Description="Done converting to new project file 'C:\cygwin64\home\elivis\libvhdi_64bit\msvscpp\libcdata\libcdata.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="libcdata" Source="libcdata\libcdata.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="libcsplit" Source="libcsplit\libcsplit.vcproj" Description="Converting project file 'C:\cygwin64\home\elivis\libvhdi_64bit\msvscpp\libcsplit\libcsplit.vcproj'.">
+</Event><Event ErrorLevel="1" Project="libcsplit" Source="libcsplit\libcsplit.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="0" Project="libcsplit" Source="libcsplit\libcsplit.vcproj" Description="Done converting to new project file 'C:\cygwin64\home\elivis\libvhdi_64bit\msvscpp\libcsplit\libcsplit.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="libcsplit" Source="libcsplit\libcsplit.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="dokan" Source="dokan\dokan.vcproj" Description="Converting project file 'C:\cygwin64\home\elivis\libvhdi_64bit\msvscpp\dokan\dokan.vcproj'.">
+</Event><Event ErrorLevel="1" Project="dokan" Source="dokan\dokan.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="0" Project="dokan" Source="dokan\dokan.vcproj" Description="Done converting to new project file 'C:\cygwin64\home\elivis\libvhdi_64bit\msvscpp\dokan\dokan.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="dokan" Source="dokan\dokan.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="libvhdi.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="libvhdi.sln" Description="Converted">
+</Event></UpgradeLog>
