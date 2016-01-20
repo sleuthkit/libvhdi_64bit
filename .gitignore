@@ -1,11 +1,11 @@
 *.sdf
+*.suo
 *.log
 
-/msvscpp/libvhdi.sdf
+/msvscpp/UpgradeLog.XML
 
 # IntelliSense data
 /msvscpp/*.ncb
-/msvscpp/*.sdf
 
 # Visual Studio user options
 /msvscpp/*.suo
