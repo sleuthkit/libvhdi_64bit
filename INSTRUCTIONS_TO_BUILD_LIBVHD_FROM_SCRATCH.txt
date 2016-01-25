@@ -23,3 +23,7 @@ Select the "x64" configuration in VS. Then for each project in libvhdi solution:
 - Select "Configuration Properties" -> "General"
 - Change "Output directory" from "$(SolutionDir)$(Configuration)\" to "$(SolutionDir)$(Platform)\$(Configuration)"
 Repeat these steps for all VS projects in the libvhdi solution
+
+In order to be used with TSK the user needs to define an environment LIBVHDI_HOME variable pointed at the top level folder where this repository will be checked out to.
+
+For example, if this repository is checked out into C:\cygwin64\home\user_name\libvhdi_64bit then LIBVHDI_HOME = C:\cygwin64\home\user_name\libvhdi_64bit
