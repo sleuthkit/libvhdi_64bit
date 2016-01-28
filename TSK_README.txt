@@ -5,9 +5,9 @@ This file describes how to build 32-bit and 64-bit Visual Studio 2010 libvhdi li
 
 Download source code tag.gz file from https://github.com/libyal/libvhdi/releases, make sure it has all libraries like libcstring etc. Do not download just git repository or "sorce code" link, they don't include all libraries and require executing multiple scripts, some of which don't run on Windows.
 
-Delete everything in libvhdi_64bit git folder on local drive except .git subfolder, .gitignore, and.gitattributes
+If you are upgrading from a previous version of libvhdi, delete all contents of libvhdi_64bit git folder (i.e. the previous version of libvhdi) on local drive except .git subfolder, .gitignore, and.gitattributes (if using git).
 
-Extract the archve containg source code there. It usually extracts in something like libvhdi-20140608 sub-folder. Move contents of that folder into top level git libvhdi_64bit folder
+Extract the archve containg source code into libvhdi_64bit folder. It usually extracts in something like libvhdi-20140608 sub-folder. Move contents of that folder into top level git libvhdi_64bit folder
 
 Open project in VS2010 and let it convert the solution
 
