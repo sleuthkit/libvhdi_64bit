@@ -1,0 +1,66 @@
+Source: libvhdi
+Section: libs
+Priority: extra
+Maintainer: Joachim Metz <joachim.metz@gmail.com>
+Build-Depends: debhelper (>= 7), autotools-dev, libfuse-dev, python-dev, python3-dev
+Standards-Version: 3.9.5
+Homepage: https://github.com/libyal/libvhdi/
+
+Package: libvhdi
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Suggests: libvhdi-dbg
+Description: Library to access the Virtual Hard Disk (VHD) image format
+ libvhdi is a library to access the Virtual Hard Disk (VHD) image format.
+
+Package: libvhdi-dbg
+Architecture: any
+Section: debug
+Depends: libvhdi (= ${binary:Version}), ${misc:Depends}
+Description: Debugging symbols for libvhdi
+ Debugging symbols for libvhdi.
+
+Package: libvhdi-dev
+Section: libdevel
+Architecture: any
+Depends: libvhdi (= ${binary:Version}), ${misc:Depends}
+Description: Header files and libraries for developing applications for libvhdi
+ Header files and libraries for developing applications for libvhdi.
+
+Package: libvhdi-tools
+Section: utils
+Architecture: any
+Depends: libvhdi (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Description: Several tools for reading Virtual Hard Disk (VHD) image files
+ Several tools for reading Virtual Hard Disk (VHD) image files.
+
+Package: libvhdi-python
+Section: python
+Architecture: any
+Depends: libvhdi (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Suggests: libvhdi-python-dbg
+Description: Python 2 bindings for libvhdi
+ Python 2 bindings for libvhdi.
+
+Package: libvhdi-python-dbg
+Section: debug
+Architecture: any
+Depends: libvhdi-python (= ${binary:Version}), ${misc:Depends}
+Description: Debugging symbols for libvhdi-python
+ Debugging symbols for libvhdi-python.
+
+Package: libvhdi-python3
+Section: python
+Architecture: any
+Depends: libvhdi (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Suggests: libvhdi-python3-dbg
+Description: Python 3 bindings for libvhdi
+ Python 3 bindings for libvhdi.
+
+Package: libvhdi-python3-dbg
+Section: debug
+Architecture: any
+Depends: libvhdi-python3 (= ${binary:Version}), ${misc:Depends}
+Description: Debugging symbols for libvhdi-python3
+ Debugging symbols for libvhdi-python3.
+
