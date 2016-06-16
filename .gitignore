@@ -11,6 +11,7 @@
 /msvscpp/*.suo
 *.sln.cache
 /msvscpp/*.opensdf
+/msvscpp/libvhdi.VC.db
 
 /msvscpp/ipch/*
 /msvscpp/libbfio/Debug/*
