@@ -1,6 +1,6 @@
-Last Updated 1.27.2016
+Last Updated 10.19.2016
 
-This file describes how to build 32-bit and 64-bit Visual Studio 2010 libvhdi library for use with TSK. This process should be followed when new release of libvhdi comes out.
+This file describes how to build 32-bit and 64-bit Visual Studio 2015 libvhdi library for use with TSK. This process should be followed when new release of libvhdi comes out.
 ----------------------------------------------------------------
 
 Download source code tag.gz file from https://github.com/libyal/libvhdi/releases, make sure it has all libraries like libcstring etc. Do not download just git repository or "sorce code" link, they don't include all libraries and require executing multiple scripts, some of which don't run on Windows.
@@ -9,7 +9,7 @@ If you are upgrading from a previous version of libvhdi, delete all contents of 
 
 Extract the archve containg source code into libvhdi_64bit folder. It usually extracts in something like libvhdi-20140608 sub-folder. Move contents of that folder into top level git libvhdi_64bit folder
 
-Open project in VS2010 and let it convert the solution
+Open project in VS2015 and let it convert the solution
 
 Remove dokan, pyvhdi, and vhdimount projects from the Visual Studio solution
 
