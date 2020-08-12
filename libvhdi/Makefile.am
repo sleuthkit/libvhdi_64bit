@@ -2,7 +2,6 @@ AM_CPPFLAGS = \
 	-DLOCALEDIR=\"$(datadir)/locale\" \
 	-I$(top_srcdir)/include \
 	-I$(top_srcdir)/common \
-	@LIBCSTRING_CPPFLAGS@ \
 	@LIBCERROR_CPPFLAGS@ \
 	@LIBCTHREADS_CPPFLAGS@ \
 	@LIBCDATA_CPPFLAGS@ \
@@ -16,7 +15,8 @@ AM_CPPFLAGS = \
 	@LIBFCACHE_CPPFLAGS@ \
 	@LIBFDATA_CPPFLAGS@ \
 	@LIBFGUID_CPPFLAGS@ \
-	@PTHREAD_CPPFLAGS@
+	@PTHREAD_CPPFLAGS@ \
+	@LIBVHDI_DLL_EXPORT@
 
 lib_LTLIBRARIES = libvhdi.la
 
@@ -27,22 +27,22 @@ libvhdi_la_SOURCES = \
 	libvhdi_data_block.c libvhdi_data_block.h \
 	libvhdi_debug.c libvhdi_debug.h \
 	libvhdi_definitions.h \
+	libvhdi_dynamic_disk_header.c libvhdi_dynamic_disk_header.h \
 	libvhdi_error.c libvhdi_error.h \
 	libvhdi_extern.h \
 	libvhdi_file.c libvhdi_file.h \
+	libvhdi_file_footer.c libvhdi_file_footer.h \
 	libvhdi_i18n.c libvhdi_i18n.h \
 	libvhdi_io_handle.c libvhdi_io_handle.h \
 	libvhdi_libbfio.h \
 	libvhdi_libcerror.h \
 	libvhdi_libclocale.h \
 	libvhdi_libcnotify.h \
-	libvhdi_libcstring.h \
 	libvhdi_libcthreads.h \
 	libvhdi_libfcache.h \
 	libvhdi_libfdata.h \
 	libvhdi_libfguid.h \
 	libvhdi_libuna.h \
-	libvhdi_metadata.c libvhdi_metadata.h \
 	libvhdi_notify.c libvhdi_notify.h \
 	libvhdi_support.c libvhdi_support.h \
 	libvhdi_types.h \
@@ -51,7 +51,6 @@ libvhdi_la_SOURCES = \
 	vhdi_file_footer.h
 
 libvhdi_la_LIBADD = \
-	@LIBCSTRING_LIBADD@ \
 	@LIBCERROR_LIBADD@ \
 	@LIBCTHREADS_LIBADD@ \
 	@LIBCDATA_LIBADD@ \

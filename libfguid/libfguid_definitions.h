@@ -1,7 +1,7 @@
 /*
  * The internal definitions
  *
- * Copyright (C) 2010-2016, Joachim Metz <joachim.metz@gmail.com>
+ * Copyright (C) 2010-2018, Joachim Metz <joachim.metz@gmail.com>
  *
  * Refer to AUTHORS for acknowledgements.
  *
@@ -36,11 +36,11 @@
 #else
 #include <byte_stream.h>
 
-#define LIBFGUID_VERSION					20160106
+#define LIBFGUID_VERSION					20180724
 
 /* The version string
  */
-#define LIBFGUID_VERSION_STRING					"20160106"
+#define LIBFGUID_VERSION_STRING					"20180724"
 
 /* The byte order definitions
  */
@@ -78,7 +78,7 @@ enum LIBFGUID_STRING_FORMAT_FLAGS
 	LIBFGUID_STRING_FORMAT_FLAG_USE_SURROUNDING_BRACES	= 0x00000004UL
 };
 
-#endif
+#endif /* !defined( HAVE_LOCAL_LIBFGUID ) */
 
-#endif
+#endif /* !defined( LIBFGUID_INTERNAL_DEFINITIONS_H ) */
 

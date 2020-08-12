@@ -1,26 +1,26 @@
 /*
  * Array functions
  *
- * Copyright (C) 2006-2016, Joachim Metz <joachim.metz@gmail.com>
+ * Copyright (C) 2006-2020, Joachim Metz <joachim.metz@gmail.com>
  *
  * Refer to AUTHORS for acknowledgements.
  *
- * This software is free software: you can redistribute it and/or modify
+ * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * This software is distributed in the hope that it will be useful,
+ * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public License
- * along with this software.  If not, see <http://www.gnu.org/licenses/>.
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#if !defined( _LIBCDATA_INTERNAL_ARRAY_H )
-#define _LIBCDATA_INTERNAL_ARRAY_H
+#if !defined( _LIBCDATA_ARRAY_H )
+#define _LIBCDATA_ARRAY_H
 
 #include <common.h>
 #include <types.h>
@@ -185,9 +185,16 @@ int libcdata_array_insert_entry(
      uint8_t insert_flags,
      libcerror_error_t **error );
 
+LIBCDATA_EXTERN \
+int libcdata_array_remove_entry(
+     libcdata_array_t *array,
+     int entry_index,
+     intptr_t **entry,
+     libcerror_error_t **error );
+
 #if defined( __cplusplus )
 }
 #endif
 
-#endif
+#endif /* !defined( _LIBCDATA_ARRAY_H ) */
 

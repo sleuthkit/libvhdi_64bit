@@ -1,7 +1,7 @@
 /*
  * Error functions
  *
- * Copyright (C) 2010-2016, Joachim Metz <joachim.metz@gmail.com>
+ * Copyright (C) 2010-2018, Joachim Metz <joachim.metz@gmail.com>
  *
  * Refer to AUTHORS for acknowledgements.
  *
@@ -20,9 +20,8 @@
  */
 
 #include <common.h>
+#include <file_stream.h>
 #include <types.h>
-
-#include <stdio.h>
 
 #include "libfguid_error.h"
 #include "libfguid_libcerror.h"
@@ -45,12 +44,17 @@ int libfguid_error_fprint(
      libfguid_error_t *error,
      FILE *stream )
 {
-	return( libcerror_error_fprint(
-	         (libcerror_error_t *) error,
-	         stream ) );
+	int print_count = 0;
+
+	print_count = libcerror_error_fprint(
+	               (libcerror_error_t *) error,
+	               stream );
+
+	return( print_count );
 }
 
 /* Prints a descriptive string of the error to the string
+ * The end-of-string character is not included in the return value
  * Returns the number of printed characters if successful or -1 on error
  */
 int libfguid_error_sprint(
@@ -58,10 +62,14 @@ int libfguid_error_sprint(
      char *string,
      size_t size )
 {
-	return( libcerror_error_sprint(
-	         (libcerror_error_t *) error,
-	         string,
-	         size ) );
+	int print_count = 0;
+
+	print_count = libcerror_error_sprint(
+	               (libcerror_error_t *) error,
+	               string,
+	               size );
+
+	return( print_count );
 }
 
 /* Prints a backtrace of the error to the stream
@@ -71,12 +79,17 @@ int libfguid_error_backtrace_fprint(
      libfguid_error_t *error,
       FILE *stream )
 {
-	return( libcerror_error_backtrace_fprint(
-	         (libcerror_error_t *) error,
-	         stream ) );
+	int print_count = 0;
+
+	print_count = libcerror_error_backtrace_fprint(
+	               (libcerror_error_t *) error,
+	               stream );
+
+	return( print_count );
 }
 
 /* Prints a backtrace of the error to the string
+ * The end-of-string character is not included in the return value
  * Returns the number of printed characters if successful or -1 on error
  */
 int libfguid_error_backtrace_sprint(
@@ -84,11 +97,15 @@ int libfguid_error_backtrace_sprint(
      char *string,
      size_t size )
 {
-	return( libcerror_error_backtrace_sprint(
-	         (libcerror_error_t *) error,
-	         string,
-	         size ) );
+	int print_count = 0;
+
+	print_count = libcerror_error_backtrace_sprint(
+	               (libcerror_error_t *) error,
+	               string,
+	               size );
+
+	return( print_count );
 }
 
-#endif
+#endif /* !defined( HAVE_LOCAL_LIBFGUID ) */
 

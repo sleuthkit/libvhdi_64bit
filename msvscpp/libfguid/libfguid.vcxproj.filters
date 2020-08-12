@@ -41,9 +41,6 @@
     <ClInclude Include="..\..\libfguid\libfguid_libcerror.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\libfguid\libfguid_libcstring.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\libfguid\libfguid_support.h">
       <Filter>Header Files</Filter>
     </ClInclude>

@@ -1,5 +1,4 @@
 MSVSCPP_FILES = \
-	dokan/dokan.vcproj \
 	libbfio/libbfio.vcproj \
 	libcdata/libcdata.vcproj \
 	libcerror/libcerror.vcproj \
@@ -8,8 +7,6 @@ MSVSCPP_FILES = \
 	libcnotify/libcnotify.vcproj \
 	libcpath/libcpath.vcproj \
 	libcsplit/libcsplit.vcproj \
-	libcstring/libcstring.vcproj \
-	libcsystem/libcsystem.vcproj \
 	libcthreads/libcthreads.vcproj \
 	libfcache/libfcache.vcproj \
 	libfdata/libfdata.vcproj \
@@ -17,24 +14,23 @@ MSVSCPP_FILES = \
 	libuna/libuna.vcproj \
 	libvhdi/libvhdi.vcproj \
 	pyvhdi/pyvhdi.vcproj \
-	vhdi_test_open_close/vhdi_test_open_close.vcproj \
-	vhdi_test_read/vhdi_test_read.vcproj \
-	vhdi_test_seek/vhdi_test_seek.vcproj \
+	vhdi_test_block_table/vhdi_test_block_table.vcproj \
+	vhdi_test_data_block/vhdi_test_data_block.vcproj \
+	vhdi_test_dynamic_disk_header/vhdi_test_dynamic_disk_header.vcproj \
+	vhdi_test_error/vhdi_test_error.vcproj \
+	vhdi_test_file/vhdi_test_file.vcproj \
+	vhdi_test_file_footer/vhdi_test_file_footer.vcproj \
+	vhdi_test_io_handle/vhdi_test_io_handle.vcproj \
+	vhdi_test_notify/vhdi_test_notify.vcproj \
+	vhdi_test_support/vhdi_test_support.vcproj \
+	vhdi_test_tools_output/vhdi_test_tools_output.vcproj \
+	vhdi_test_tools_signal/vhdi_test_tools_signal.vcproj \
 	vhdiinfo/vhdiinfo.vcproj \
 	vhdimount/vhdimount.vcproj \
 	libvhdi.sln
 
-SCRIPT_FILES = \
-	scripts/vs2008_x64.sh \
-	scripts/vs2008_x64_sln.sed \
-	scripts/vs2008_x64_vcproj.sed \
-	scripts/vs2010_x64.sh \
-	scripts/vs2010_x64_sln.sed \
-	scripts/vs2010_x64_vcxproj.sed
-
 EXTRA_DIST = \
-	$(MSVSCPP_FILES) \
-	$(SCRIPT_FILES)
+	$(MSVSCPP_FILES)
 
 MAINTAINERCLEANFILES = \
 	Makefile.in

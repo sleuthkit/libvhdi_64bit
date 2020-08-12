@@ -27,19 +27,22 @@
     <ClCompile Include="..\..\libvhdi\libvhdi_debug.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\libvhdi\libvhdi_dynamic_disk_header.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\libvhdi\libvhdi_error.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\libvhdi\libvhdi_file.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\libvhdi\libvhdi_file_footer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\libvhdi\libvhdi_i18n.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\libvhdi\libvhdi_io_handle.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\libvhdi\libvhdi_metadata.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\libvhdi\libvhdi_notify.c">
@@ -65,6 +68,9 @@
     <ClInclude Include="..\..\libvhdi\libvhdi_definitions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\libvhdi\libvhdi_dynamic_disk_header.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\libvhdi\libvhdi_error.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -72,6 +78,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\libvhdi\libvhdi_file.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\libvhdi\libvhdi_file_footer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\libvhdi\libvhdi_i18n.h">
@@ -92,9 +101,6 @@
     <ClInclude Include="..\..\libvhdi\libvhdi_libcnotify.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\libvhdi\libvhdi_libcstring.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\libvhdi\libvhdi_libcthreads.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -108,9 +114,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\libvhdi\libvhdi_libuna.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\libvhdi\libvhdi_metadata.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\libvhdi\libvhdi_notify.h">

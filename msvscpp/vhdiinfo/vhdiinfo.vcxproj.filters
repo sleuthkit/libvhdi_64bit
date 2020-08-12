@@ -15,21 +15,36 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\vhditools\byte_size_string.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\vhditools\info_handle.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\vhditools\vhdiinfo.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\vhditools\vhdioutput.c">
+    <ClCompile Include="..\..\vhditools\vhditools_getopt.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vhditools\vhditools_output.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vhditools\vhditools_signal.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\vhditools\byte_size_string.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\vhditools\info_handle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\vhditools\vhdioutput.h">
+    <ClInclude Include="..\..\vhditools\vhditools_getopt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vhditools\vhditools_i18n.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\vhditools\vhditools_libbfio.h">
@@ -47,12 +62,6 @@
     <ClInclude Include="..\..\vhditools\vhditools_libcnotify.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\vhditools\vhditools_libcstring.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\vhditools\vhditools_libcsystem.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\vhditools\vhditools_libfguid.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -60,6 +69,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\vhditools\vhditools_libvhdi.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vhditools\vhditools_output.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vhditools\vhditools_signal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vhditools\vhditools_unused.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
