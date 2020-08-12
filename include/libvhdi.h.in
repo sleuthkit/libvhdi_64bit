@@ -1,22 +1,22 @@
 /*
  * Library to access the Virtual Hard Disk (VHD) image format
  *
- * Copyright (C) 2012-2016, Joachim Metz <joachim.metz@gmail.com>
+ * Copyright (C) 2012-2020, Joachim Metz <joachim.metz@gmail.com>
  *
  * Refer to AUTHORS for acknowledgements.
  *
- * This software is free software: you can redistribute it and/or modisoy
+ * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * This software is distributed in the hope that it will be useful,
+ * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public License
- * along with this software.  If not, see <http://www.gnu.org/licenses/>.
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 #if !defined( _LIBVHDI_H )
@@ -107,7 +107,7 @@ int libvhdi_check_file_signature_wide(
 
 #if defined( LIBVHDI_HAVE_BFIO )
 
-/* Determines if a file is a VHDI file (check for the VHDI file signature) using a Basic File IO (bfio) handle
+/* Determines if a file contains a VHDI file signature using a Basic File IO (bfio) handle
  * Returns 1 if true, 0 if not or -1 on error
  */
 LIBVHDI_EXTERN \
@@ -313,7 +313,7 @@ ssize_t libvhdi_file_write_buffer(
  * Returns the number of input bytes written, 0 when no longer bytes can be written or -1 on error
  */
 LIBVHDI_EXTERN \
-ssize_t libvhdi_file_write_buffer_add_offset(
+ssize_t libvhdi_file_write_buffer_at_offset(
          libvhdi_file_t *file,
          const void *buffer,
          size_t buffer_size,
@@ -382,23 +382,25 @@ int libvhdi_file_get_media_size(
      libvhdi_error_t **error );
 
 /* Retrieves the identifier
+ * The identifier is a big-endian GUID and is 16 bytes of size
  * Returns 1 if successful or -1 on error
  */
 LIBVHDI_EXTERN \
 int libvhdi_file_get_identifier(
      libvhdi_file_t *file,
-     uint8_t *guid,
-     size_t size,
+     uint8_t *guid_data,
+     size_t guid_data_size,
      libvhdi_error_t **error );
 
 /* Retrieves the parent identifier
+ * The identifier is a big-endian GUID and is 16 bytes of size
  * Returns 1 if successful, 0 if not available or -1 on error
  */
 LIBVHDI_EXTERN \
 int libvhdi_file_get_parent_identifier(
      libvhdi_file_t *file,
-     uint8_t *guid,
-     size_t size,
+     uint8_t *guid_data,
+     size_t guid_data_size,
      libvhdi_error_t **error );
 
 /* Retrieves the size of the UTF-8 encoded parent filename
@@ -447,5 +449,5 @@ int libvhdi_file_get_utf16_parent_filename(
 }
 #endif
 
-#endif
+#endif /* !defined( _LIBVHDI_H ) */
 

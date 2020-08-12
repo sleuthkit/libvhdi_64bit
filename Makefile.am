@@ -3,7 +3,6 @@ ACLOCAL_AMFLAGS = -I m4
 SUBDIRS = \
 	include \
 	common \
-	libcstring \
 	libcerror \
 	libcthreads \
 	libcdata \
@@ -18,14 +17,14 @@ SUBDIRS = \
 	libfdata \
 	libfguid \
 	libvhdi \
-	libcsystem \
 	vhditools \
 	pyvhdi \
-	pyvhdi2 \
-	pyvhdi3 \
+	pyvhdi-python2 \
+	pyvhdi-python3 \
 	po \
 	manuals \
 	tests \
+	ossfuzz \
 	msvscpp
 
 DPKG_FILES = \
@@ -34,13 +33,12 @@ DPKG_FILES = \
 	dpkg/compat \
 	dpkg/control \
 	dpkg/copyright \
-	dpkg/copyright.in \
 	dpkg/rules \
-	dpkg/libvhdi.docs \
-	dpkg/libvhdi-dev.docs \
-	dpkg/libvhdi-python.docs \
-	dpkg/libvhdi-python3.docs \
-	dpkg/libvhdi-tools.docs \
+	dpkg/libvhdi.install \
+	dpkg/libvhdi-dev.install \
+	dpkg/libvhdi-python.install \
+	dpkg/libvhdi-python3.install \
+	dpkg/libvhdi-tools.install \
 	dpkg/source/format
 
 GETTEXT_FILES = \
@@ -80,7 +78,6 @@ lib: library
 
 library:
 	(cd $(srcdir)/common && $(MAKE) $(AM_MAKEFLAGS))
-	(cd $(srcdir)/libcstring && $(MAKE) $(AM_MAKEFLAGS))
 	(cd $(srcdir)/libcerror && $(MAKE) $(AM_MAKEFLAGS))
 	(cd $(srcdir)/libcthreads && $(MAKE) $(AM_MAKEFLAGS))
 	(cd $(srcdir)/libcdata && $(MAKE) $(AM_MAKEFLAGS))
@@ -93,6 +90,7 @@ library:
 	(cd $(srcdir)/libbfio && $(MAKE) $(AM_MAKEFLAGS))
 	(cd $(srcdir)/libfcache && $(MAKE) $(AM_MAKEFLAGS))
 	(cd $(srcdir)/libfdata && $(MAKE) $(AM_MAKEFLAGS))
+	(cd $(srcdir)/libfguid && $(MAKE) $(AM_MAKEFLAGS))
 	(cd $(srcdir)/libvhdi && $(MAKE) $(AM_MAKEFLAGS))
 	(cd $(srcdir)/po && $(MAKE) $(AM_MAKEFLAGS))
 
@@ -109,7 +107,6 @@ distclean: clean
 	done && test -z "$$fail"
 
 splint:
-	(cd $(srcdir)/libcstring && $(MAKE) splint $(AM_MAKEFLAGS))
 	(cd $(srcdir)/libcerror && $(MAKE) splint $(AM_MAKEFLAGS))
 	(cd $(srcdir)/libcthreads && $(MAKE) splint $(AM_MAKEFLAGS))
 	(cd $(srcdir)/libcdata && $(MAKE) splint $(AM_MAKEFLAGS))
@@ -122,10 +119,11 @@ splint:
 	(cd $(srcdir)/libbfio && $(MAKE) splint $(AM_MAKEFLAGS))
 	(cd $(srcdir)/libfcache && $(MAKE) splint $(AM_MAKEFLAGS))
 	(cd $(srcdir)/libfdata && $(MAKE) splint $(AM_MAKEFLAGS))
+	(cd $(srcdir)/libfguid && $(MAKE) splint $(AM_MAKEFLAGS))
 	(cd $(srcdir)/libvhdi && $(MAKE) splint $(AM_MAKEFLAGS))
-	(cd $(srcdir)/libcsystem && $(MAKE) splint $(AM_MAKEFLAGS))
 	(cd $(srcdir)/vhditools && $(MAKE) splint $(AM_MAKEFLAGS))
 	(cd $(srcdir)/pyvhdi && $(MAKE) splint $(AM_MAKEFLAGS))
 	(cd $(srcdir)/po && $(MAKE) $(AM_MAKEFLAGS))
 	(cd $(srcdir)/tests && $(MAKE) $(AM_MAKEFLAGS))
+	(cd $(srcdir)/ossfuzz && $(MAKE) $(AM_MAKEFLAGS))
 

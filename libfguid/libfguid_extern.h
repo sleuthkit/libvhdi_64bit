@@ -1,7 +1,7 @@
 /*
  * The internal extern definition
  *
- * Copyright (C) 2010-2016, Joachim Metz <joachim.metz@gmail.com>
+ * Copyright (C) 2010-2018, Joachim Metz <joachim.metz@gmail.com>
  *
  * Refer to AUTHORS for acknowledgements.
  *
@@ -37,11 +37,13 @@
 
 #include <libfguid/extern.h>
 
+#define LIBFGUID_EXTERN_VARIABLE	LIBFGUID_EXTERN
+
 #else
+#define LIBFGUID_EXTERN		/* extern */
+#define LIBFGUID_EXTERN_VARIABLE	extern
 
-#define LIBFGUID_EXTERN	extern
+#endif /* !defined( HAVE_LOCAL_LIBFGUID ) */
 
-#endif
-
-#endif
+#endif /* !defined( _LIBFGUID_INTERNAL_EXTERN_H ) */
 

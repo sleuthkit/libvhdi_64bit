@@ -1,22 +1,22 @@
 /*
  * Block table functions
  *
- * Copyright (C) 2012-2016, Joachim Metz <joachim.metz@gmail.com>
+ * Copyright (C) 2012-2020, Joachim Metz <joachim.metz@gmail.com>
  *
  * Refer to AUTHORS for acknowledgements.
  *
- * This software is free software: you can redistribute it and/or modify
+ * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * This software is distributed in the hope that it will be useful,
+ * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public License
- * along with this software.  If not, see <http://www.gnu.org/licenses/>.
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 #include <common.h>
@@ -249,6 +249,7 @@ int libvhdi_block_table_read(
 	static char *function          = "libvhdi_block_table_read";
 	size_t block_table_data_offset = 0;
 	ssize_t read_count             = 0;
+	uint32_t block_table_reference = 0;
 	int block_table_index          = 0;
 
 	if( block_table == NULL )
@@ -273,32 +274,20 @@ int libvhdi_block_table_read(
 
 		return( -1 );
 	}
-/* TODO improve check ? */
-	if( (size_t) number_of_blocks > (size_t) INT_MAX )
+	if( ( number_of_blocks == 0 )
+	 || ( (size_t) number_of_blocks > ( (size_t) MEMORY_MAXIMUM_ALLOCATION_SIZE / sizeof( uint32_t ) ) ) )
 	{
 		libcerror_error_set(
 		 error,
 		 LIBCERROR_ERROR_DOMAIN_ARGUMENTS,
-		 LIBCERROR_ARGUMENT_ERROR_VALUE_EXCEEDS_MAXIMUM,
-		 "%s: invalid number of blocks value exceeds maximum.",
-		 function );
-
-		return( -1 );
-	}
-	block_table->size = number_of_blocks * sizeof( uint32_t );
-
-	if( block_table->size > (size_t) SSIZE_MAX )
-	{
-		libcerror_error_set(
-		 error,
-		 LIBCERROR_ERROR_DOMAIN_RUNTIME,
-		 LIBCERROR_RUNTIME_ERROR_VALUE_EXCEEDS_MAXIMUM,
-		 "%s: invalid block table size value exceeds maximum.",
+		 LIBCERROR_ARGUMENT_ERROR_VALUE_OUT_OF_BOUNDS,
+		 "%s: invalid number of blocks value out of bounds.",
 		 function );
 
 		return( -1 );
 	}
 	block_table->number_of_references = (int) number_of_blocks;
+	block_table->size                 = number_of_blocks * sizeof( uint32_t );
 
 	block_table->references = (uint32_t *) memory_allocate(
 	                                        block_table->size );
@@ -389,7 +378,7 @@ int libvhdi_block_table_read(
 	{
 		byte_stream_copy_to_uint32_big_endian(
 		 &( block_table_data[ block_table_data_offset ] ),
-		 ( block_table->references )[ block_table_index ] );
+		 block_table_reference );
 
 		block_table_data_offset += 4;
 
@@ -400,9 +389,10 @@ int libvhdi_block_table_read(
 			 "%s: block table reference: %03d\t\t: 0x%08" PRIx32 "\n",
 			 function,
 			 block_table_index,
-			 ( block_table->references )[ block_table_index ] );
+			 block_table_reference );
 		}
 #endif
+		 ( block_table->references )[ block_table_index ] = block_table_reference;
 	}
 #if defined( HAVE_DEBUG_OUTPUT )
 	if( libcnotify_verbose != 0 )

@@ -1,7 +1,7 @@
 /*
  * Global (or Universal) Unique Identifier (GUID/UUID) functions
  *
- * Copyright (C) 2010-2016, Joachim Metz <joachim.metz@gmail.com>
+ * Copyright (C) 2010-2018, Joachim Metz <joachim.metz@gmail.com>
  *
  * Refer to AUTHORS for acknowledgements.
  *
@@ -200,5 +200,5 @@ int libfguid_identifier_copy_to_utf32_string_with_index(
 }
 #endif
 
-#endif
+#endif /* !defined( _LIBFGUID_INTERNAL_IDENTIFIER_H ) */
 

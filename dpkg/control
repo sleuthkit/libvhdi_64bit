@@ -1,14 +1,17 @@
 Source: libvhdi
-Section: libs
 Priority: extra
 Maintainer: Joachim Metz <joachim.metz@gmail.com>
-Build-Depends: debhelper (>= 7), autotools-dev, libfuse-dev, python-dev, python3-dev
-Standards-Version: 3.9.5
-Homepage: https://github.com/libyal/libvhdi/
+Build-Depends: debhelper (>= 9), dh-autoreconf, pkg-config, python-dev, python-setuptools, python3-dev, python3-setuptools, libfuse-dev
+Standards-Version: 4.1.4
+Section: libs
+Homepage: https://github.com/libyal/libvhdi
+Vcs-Git: https://github.com/libyal/libvhdi.git
 
 Package: libvhdi
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
+Conflicts: libvhdi1
+Replaces: libvhdi1
 Suggests: libvhdi-dbg
 Description: Library to access the Virtual Hard Disk (VHD) image format
  libvhdi is a library to access the Virtual Hard Disk (VHD) image format.
@@ -31,13 +34,24 @@ Package: libvhdi-tools
 Section: utils
 Architecture: any
 Depends: libvhdi (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Conflicts: libvhdi-utils
+Replaces: libvhdi-utils
 Description: Several tools for reading Virtual Hard Disk (VHD) image files
  Several tools for reading Virtual Hard Disk (VHD) image files.
+
+Package: libvhdi-tools-dbg
+Section: debug
+Architecture: any
+Depends: libvhdi-tools (= ${binary:Version}), ${misc:Depends}
+Description: Debugging symbols for libvhdi-tools
+ Debugging symbols for libvhdi-tools.
 
 Package: libvhdi-python
 Section: python
 Architecture: any
 Depends: libvhdi (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Conflicts: python-libvhdi
+Replaces: python-libvhdi
 Suggests: libvhdi-python-dbg
 Description: Python 2 bindings for libvhdi
  Python 2 bindings for libvhdi.
@@ -53,6 +67,8 @@ Package: libvhdi-python3
 Section: python
 Architecture: any
 Depends: libvhdi (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Conflicts: python3-libvhdi
+Replaces: python3-libvhdi
 Suggests: libvhdi-python3-dbg
 Description: Python 3 bindings for libvhdi
  Python 3 bindings for libvhdi.

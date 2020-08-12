@@ -15,21 +15,54 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\vhditools\mount_dokan.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vhditools\mount_file_entry.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vhditools\mount_file_system.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vhditools\mount_fuse.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\vhditools\mount_handle.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\vhditools\vhdimount.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\vhditools\vhdioutput.c">
+    <ClCompile Include="..\..\vhditools\vhditools_getopt.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vhditools\vhditools_output.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vhditools\vhditools_signal.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\vhditools\mount_dokan.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vhditools\mount_file_entry.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vhditools\mount_file_system.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vhditools\mount_fuse.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\vhditools\mount_handle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\vhditools\vhdioutput.h">
+    <ClInclude Include="..\..\vhditools\vhditools_getopt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vhditools\vhditools_i18n.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\vhditools\vhditools_libbfio.h">
@@ -50,16 +83,19 @@
     <ClInclude Include="..\..\vhditools\vhditools_libcpath.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\vhditools\vhditools_libcstring.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\vhditools\vhditools_libcsystem.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\vhditools\vhditools_libuna.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\vhditools\vhditools_libvhdi.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vhditools\vhditools_output.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vhditools\vhditools_signal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vhditools\vhditools_unused.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

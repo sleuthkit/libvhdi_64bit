@@ -30,6 +30,9 @@
     <ClCompile Include="..\..\pyvhdi\pyvhdi_file_object_io_handle.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\pyvhdi\pyvhdi_guid.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\pyvhdi\pyvhdi_integer.c">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -50,6 +53,9 @@
     <ClInclude Include="..\..\pyvhdi\pyvhdi_file_object_io_handle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\pyvhdi\pyvhdi_guid.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\pyvhdi\pyvhdi_integer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -62,7 +68,7 @@
     <ClInclude Include="..\..\pyvhdi\pyvhdi_libclocale.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\pyvhdi\pyvhdi_libcstring.h">
+    <ClInclude Include="..\..\pyvhdi\pyvhdi_libfguid.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\pyvhdi\pyvhdi_libvhdi.h">

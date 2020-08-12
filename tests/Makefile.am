@@ -1,7 +1,6 @@
 AM_CPPFLAGS = \
 	-I$(top_srcdir)/include \
 	-I$(top_srcdir)/common \
-	@LIBCSTRING_CPPFLAGS@ \
 	@LIBCERROR_CPPFLAGS@ \
 	@LIBCTHREADS_CPPFLAGS@ \
 	@LIBCDATA_CPPFLAGS@ \
@@ -12,86 +11,226 @@ AM_CPPFLAGS = \
 	@LIBCFILE_CPPFLAGS@ \
 	@LIBCPATH_CPPFLAGS@ \
 	@LIBBFIO_CPPFLAGS@ \
+	@LIBFCACHE_CPPFLAGS@ \
+	@LIBFDATA_CPPFLAGS@ \
+	@LIBFGUID_CPPFLAGS@ \
 	@PTHREAD_CPPFLAGS@ \
 	@LIBVHDI_DLL_IMPORT@
 
-if HAVE_PYTHON
+if HAVE_PYTHON_TESTS
 TESTS_PYVHDI = \
-	test_pyvhdi_open_close.sh \
-	test_pyvhdi_seek.sh
+	test_python_module.sh
 endif
 
 TESTS = \
-	test_open_close.sh \
-	test_seek.sh \
-	test_read.sh \
+	test_library.sh \
+	test_tools.sh \
 	test_vhdiinfo.sh \
 	$(TESTS_PYVHDI)
 
 check_SCRIPTS = \
-	pyvhdi_test_open_close.py \
-	pyvhdi_test_seek.py \
-	test_pyvhdi_open_close.sh \
-	test_open_close.sh \
-	test_pyvhdi_open_close.sh \
-	test_pyvhdi_seek.sh \
-	test_read.sh \
+	pyvhdi_test_file.py \
+	pyvhdi_test_support.py \
+	test_library.sh \
+	test_manpage.sh \
+	test_python_module.sh \
 	test_runner.sh \
-	test_seek.sh \
+	test_tools.sh \
 	test_vhdiinfo.sh
 
 EXTRA_DIST = \
 	$(check_SCRIPTS)
 
 check_PROGRAMS = \
-	vhdi_test_open_close \
-	vhdi_test_read \
-	vhdi_test_seek
+	vhdi_test_block_table \
+	vhdi_test_data_block \
+	vhdi_test_dynamic_disk_header \
+	vhdi_test_error \
+	vhdi_test_file \
+	vhdi_test_file_footer \
+	vhdi_test_io_handle \
+	vhdi_test_notify \
+	vhdi_test_support \
+	vhdi_test_tools_output \
+	vhdi_test_tools_signal
 
-vhdi_test_open_close_SOURCES = \
+vhdi_test_block_table_SOURCES = \
+	vhdi_test_block_table.c \
 	vhdi_test_libcerror.h \
-	vhdi_test_libcstring.h \
-	vhdi_test_libcthreads.h \
 	vhdi_test_libvhdi.h \
-	vhdi_test_open_close.c \
+	vhdi_test_macros.h \
+	vhdi_test_memory.c vhdi_test_memory.h \
 	vhdi_test_unused.h
 
-vhdi_test_open_close_LDADD = \
+vhdi_test_block_table_LDADD = \
+	../libvhdi/libvhdi.la \
+	@LIBCERROR_LIBADD@
+
+vhdi_test_data_block_SOURCES = \
+	vhdi_test_data_block.c \
+	vhdi_test_libcerror.h \
+	vhdi_test_libvhdi.h \
+	vhdi_test_macros.h \
+	vhdi_test_memory.c vhdi_test_memory.h \
+	vhdi_test_unused.h
+
+vhdi_test_data_block_LDADD = \
+	../libvhdi/libvhdi.la \
+	@LIBCERROR_LIBADD@
+
+vhdi_test_dynamic_disk_header_SOURCES = \
+	vhdi_test_dynamic_disk_header.c \
+	vhdi_test_functions.c vhdi_test_functions.h \
+	vhdi_test_libbfio.h \
+	vhdi_test_libcerror.h \
+	vhdi_test_libvhdi.h \
+	vhdi_test_macros.h \
+	vhdi_test_memory.c vhdi_test_memory.h \
+	vhdi_test_unused.h
+
+vhdi_test_dynamic_disk_header_LDADD = \
+	@LIBBFIO_LIBADD@ \
+	@LIBCPATH_LIBADD@ \
+	@LIBCFILE_LIBADD@ \
+	@LIBUNA_LIBADD@ \
+	@LIBCSPLIT_LIBADD@ \
+	@LIBCNOTIFY_LIBADD@ \
+	@LIBCLOCALE_LIBADD@ \
+	@LIBCDATA_LIBADD@ \
+	../libvhdi/libvhdi.la \
+	@LIBCERROR_LIBADD@
+
+vhdi_test_error_SOURCES = \
+	vhdi_test_error.c \
+	vhdi_test_libvhdi.h \
+	vhdi_test_macros.h \
+	vhdi_test_unused.h
+
+vhdi_test_error_LDADD = \
+	../libvhdi/libvhdi.la
+
+vhdi_test_file_SOURCES = \
+	vhdi_test_file.c \
+	vhdi_test_functions.c vhdi_test_functions.h \
+	vhdi_test_getopt.c vhdi_test_getopt.h \
+	vhdi_test_libbfio.h \
+	vhdi_test_libcerror.h \
+	vhdi_test_libclocale.h \
+	vhdi_test_libcnotify.h \
+	vhdi_test_libcpath.h \
+	vhdi_test_libuna.h \
+	vhdi_test_libvhdi.h \
+	vhdi_test_macros.h \
+	vhdi_test_memory.c vhdi_test_memory.h \
+	vhdi_test_unused.h
+
+vhdi_test_file_LDADD = \
+	@LIBBFIO_LIBADD@ \
+	@LIBCPATH_LIBADD@ \
+	@LIBCFILE_LIBADD@ \
+	@LIBUNA_LIBADD@ \
+	@LIBCSPLIT_LIBADD@ \
+	@LIBCNOTIFY_LIBADD@ \
+	@LIBCLOCALE_LIBADD@ \
+	@LIBCDATA_LIBADD@ \
 	../libvhdi/libvhdi.la \
 	@LIBCTHREADS_LIBADD@ \
 	@LIBCERROR_LIBADD@ \
-	@LIBCSTRING_LIBADD@ \
 	@PTHREAD_LIBADD@
 
-vhdi_test_read_SOURCES = \
+vhdi_test_file_footer_SOURCES = \
+	vhdi_test_file_footer.c \
+	vhdi_test_functions.c vhdi_test_functions.h \
+	vhdi_test_libbfio.h \
 	vhdi_test_libcerror.h \
-	vhdi_test_libcstring.h \
-	vhdi_test_libcthreads.h \
 	vhdi_test_libvhdi.h \
-	vhdi_test_read.c \
+	vhdi_test_macros.h \
+	vhdi_test_memory.c vhdi_test_memory.h \
 	vhdi_test_unused.h
 
-vhdi_test_read_LDADD = \
+vhdi_test_file_footer_LDADD = \
+	@LIBBFIO_LIBADD@ \
+	@LIBCPATH_LIBADD@ \
+	@LIBCFILE_LIBADD@ \
+	@LIBUNA_LIBADD@ \
+	@LIBCSPLIT_LIBADD@ \
+	@LIBCNOTIFY_LIBADD@ \
+	@LIBCLOCALE_LIBADD@ \
+	@LIBCDATA_LIBADD@ \
 	../libvhdi/libvhdi.la \
-	@LIBCTHREADS_LIBADD@ \
-	@LIBCERROR_LIBADD@ \
-	@LIBCSTRING_LIBADD@ \
-	@PTHREAD_LIBADD@
+	@LIBCERROR_LIBADD@
 
-vhdi_test_seek_SOURCES = \
+vhdi_test_io_handle_SOURCES = \
+	vhdi_test_io_handle.c \
 	vhdi_test_libcerror.h \
-	vhdi_test_libcstring.h \
-	vhdi_test_libcthreads.h \
 	vhdi_test_libvhdi.h \
-	vhdi_test_seek.c \
+	vhdi_test_macros.h \
+	vhdi_test_memory.c vhdi_test_memory.h \
 	vhdi_test_unused.h
 
-vhdi_test_seek_LDADD = \
+vhdi_test_io_handle_LDADD = \
 	../libvhdi/libvhdi.la \
-	@LIBCTHREADS_LIBADD@ \
-	@LIBCERROR_LIBADD@ \
-	@LIBCSTRING_LIBADD@ \
-	@PTHREAD_LIBADD@
+	@LIBCERROR_LIBADD@
+
+vhdi_test_notify_SOURCES = \
+	vhdi_test_libbfio.h \
+	vhdi_test_libcerror.h \
+	vhdi_test_libvhdi.h \
+	vhdi_test_macros.h \
+	vhdi_test_notify.c \
+	vhdi_test_unused.h
+
+vhdi_test_notify_LDADD = \
+	../libvhdi/libvhdi.la \
+	@LIBCERROR_LIBADD@
+
+vhdi_test_support_SOURCES = \
+	vhdi_test_functions.c vhdi_test_functions.h \
+	vhdi_test_getopt.c vhdi_test_getopt.h \
+	vhdi_test_libbfio.h \
+	vhdi_test_libcerror.h \
+	vhdi_test_libclocale.h \
+	vhdi_test_libcnotify.h \
+	vhdi_test_libuna.h \
+	vhdi_test_libvhdi.h \
+	vhdi_test_macros.h \
+	vhdi_test_memory.c vhdi_test_memory.h \
+	vhdi_test_support.c \
+	vhdi_test_unused.h
+
+vhdi_test_support_LDADD = \
+	@LIBBFIO_LIBADD@ \
+	@LIBCPATH_LIBADD@ \
+	@LIBCFILE_LIBADD@ \
+	@LIBUNA_LIBADD@ \
+	@LIBCSPLIT_LIBADD@ \
+	@LIBCNOTIFY_LIBADD@ \
+	@LIBCLOCALE_LIBADD@ \
+	@LIBCDATA_LIBADD@ \
+	../libvhdi/libvhdi.la \
+	@LIBCERROR_LIBADD@
+
+vhdi_test_tools_output_SOURCES = \
+	../vhditools/vhditools_output.c ../vhditools/vhditools_output.h \
+	vhdi_test_libcerror.h \
+	vhdi_test_macros.h \
+	vhdi_test_tools_output.c \
+	vhdi_test_unused.h
+
+vhdi_test_tools_output_LDADD = \
+	../libvhdi/libvhdi.la \
+	@LIBCERROR_LIBADD@
+
+vhdi_test_tools_signal_SOURCES = \
+	../vhditools/vhditools_signal.c ../vhditools/vhditools_signal.h \
+	vhdi_test_libcerror.h \
+	vhdi_test_macros.h \
+	vhdi_test_tools_signal.c \
+	vhdi_test_unused.h
+
+vhdi_test_tools_signal_LDADD = \
+	../libvhdi/libvhdi.la \
+	@LIBCERROR_LIBADD@
 
 MAINTAINERCLEANFILES = \
 	Makefile.in

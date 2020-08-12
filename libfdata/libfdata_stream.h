@@ -1,22 +1,22 @@
 /*
  * The stream functions
  *
- * Copyright (C) 2010-2016, Joachim Metz <joachim.metz@gmail.com>
+ * Copyright (C) 2010-2020, Joachim Metz <joachim.metz@gmail.com>
  *
  * Refer to AUTHORS for acknowledgements.
  *
- * This software is free software: you can redistribute it and/or modify
+ * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * This software is distributed in the hope that it will be useful,
+ * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public License
- * along with this software.  If not, see <http://www.gnu.org/licenses/>.
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 #if !defined( _LIBFDATA_INTERNAL_STREAM_H )
@@ -270,10 +270,6 @@ int libfdata_stream_set_mapped_size(
 
 /* Mapped range functions
  */
-int libfdata_stream_calculate_mapped_ranges(
-     libfdata_internal_stream_t *internal_stream,
-     libcerror_error_t **error );
-
 LIBFDATA_EXTERN \
 int libfdata_stream_get_segment_mapped_range(
      libfdata_stream_t *stream,
@@ -355,5 +351,5 @@ int libfdata_stream_get_size(
 }
 #endif
 
-#endif
+#endif /* !defined( _LIBFDATA_INTERNAL_STREAM_H ) */
 

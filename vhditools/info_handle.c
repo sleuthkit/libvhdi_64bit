@@ -1,33 +1,36 @@
 /*
  * Info handle
  *
- * Copyright (C) 2012-2016, Joachim Metz <joachim.metz@gmail.com>
+ * Copyright (C) 2012-2020, Joachim Metz <joachim.metz@gmail.com>
  *
  * Refer to AUTHORS for acknowledgements.
  *
- * This software is free software: you can redistribute it and/or modify
+ * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * This software is distributed in the hope that it will be useful,
+ * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public License
- * along with this software.  If not, see <http://www.gnu.org/licenses/>.
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 #include <common.h>
 #include <byte_stream.h>
 #include <memory.h>
+#include <narrow_string.h>
+#include <system_string.h>
 #include <types.h>
+#include <wide_string.h>
 
+#include "byte_size_string.h"
 #include "info_handle.h"
 #include "vhditools_libcerror.h"
 #include "vhditools_libcnotify.h"
-#include "vhditools_libcstring.h"
 #include "vhditools_libfguid.h"
 #include "vhditools_libvhdi.h"
 
@@ -85,14 +88,14 @@ int info_handle_initialize(
 			goto on_error;
 		}
 		if( libvhdi_file_initialize(
-		     &( ( *info_handle )->input_file ),
+		     &( ( *info_handle )->input ),
 		     error ) != 1 )
 		{
 			libcerror_error_set(
 			 error,
 			 LIBCERROR_ERROR_DOMAIN_RUNTIME,
 			 LIBCERROR_RUNTIME_ERROR_INITIALIZE_FAILED,
-			 "%s: unable to initialize input file.",
+			 "%s: unable to initialize input.",
 			 function );
 
 			goto on_error;
@@ -135,17 +138,17 @@ int info_handle_free(
 	}
 	if( *info_handle != NULL )
 	{
-		if( ( *info_handle )->input_file != NULL )
+		if( ( *info_handle )->input != NULL )
 		{
 			if( libvhdi_file_free(
-			     &( ( *info_handle )->input_file ),
+			     &( ( *info_handle )->input ),
 			     error ) != 1 )
 			{
 				libcerror_error_set(
 				 error,
 				 LIBCERROR_ERROR_DOMAIN_RUNTIME,
 				 LIBCERROR_RUNTIME_ERROR_FINALIZE_FAILED,
-				 "%s: unable to free input file.",
+				 "%s: unable to free input.",
 				 function );
 
 				result = -1;
@@ -179,17 +182,17 @@ int info_handle_signal_abort(
 
 		return( -1 );
 	}
-	if( info_handle->input_file != NULL )
+	if( info_handle->input != NULL )
 	{
 		if( libvhdi_file_signal_abort(
-		     info_handle->input_file,
+		     info_handle->input,
 		     error ) != 1 )
 		{
 			libcerror_error_set(
 			 error,
 			 LIBCERROR_ERROR_DOMAIN_RUNTIME,
 			 LIBCERROR_RUNTIME_ERROR_SET_FAILED,
-			 "%s: unable to signal input file to abort.",
+			 "%s: unable to signal input to abort.",
 			 function );
 
 			return( -1 );
@@ -203,7 +206,7 @@ int info_handle_signal_abort(
  */
 int info_handle_open_input(
      info_handle_t *info_handle,
-     const libcstring_system_character_t *filename,
+     const system_character_t *filename,
      libcerror_error_t **error )
 {
 	static char *function = "info_handle_open_input";
@@ -219,15 +222,15 @@ int info_handle_open_input(
 
 		return( -1 );
 	}
-#if defined( LIBCSTRING_HAVE_WIDE_SYSTEM_CHARACTER )
+#if defined( HAVE_WIDE_SYSTEM_CHARACTER )
 	if( libvhdi_file_open_wide(
-	     info_handle->input_file,
+	     info_handle->input,
 	     filename,
 	     LIBVHDI_OPEN_READ,
 	     error ) != 1 )
 #else
 	if( libvhdi_file_open(
-	     info_handle->input_file,
+	     info_handle->input,
 	     filename,
 	     LIBVHDI_OPEN_READ,
 	     error ) != 1 )
@@ -237,7 +240,7 @@ int info_handle_open_input(
 		 error,
 		 LIBCERROR_ERROR_DOMAIN_IO,
 		 LIBCERROR_IO_ERROR_OPEN_FAILED,
-		 "%s: unable to open input file.",
+		 "%s: unable to open input.",
 		 function );
 
 		return( -1 );
@@ -265,26 +268,26 @@ int info_handle_close(
 
 		return( -1 );
 	}
-	if( info_handle->input_file == NULL )
+	if( info_handle->input == NULL )
 	{
 		libcerror_error_set(
 		 error,
 		 LIBCERROR_ERROR_DOMAIN_RUNTIME,
 		 LIBCERROR_RUNTIME_ERROR_VALUE_MISSING,
-		 "%s: invalid info handle - missing input file.",
+		 "%s: invalid info handle - missing input.",
 		 function );
 
 		return( -1 );
 	}
 	if( libvhdi_file_close(
-	     info_handle->input_file,
+	     info_handle->input,
 	     error ) != 0 )
 	{
 		libcerror_error_set(
 		 error,
 		 LIBCERROR_ERROR_DOMAIN_IO,
 		 LIBCERROR_IO_ERROR_CLOSE_FAILED,
-		 "%s: unable to close input file.",
+		 "%s: unable to close input.",
 		 function );
 
 		return( -1 );
@@ -292,26 +295,26 @@ int info_handle_close(
 	return( 0 );
 }
 
-/* Prints the file information to a stream
+/* Prints the input information to a stream
  * Returns 1 if successful or -1 on error
  */
-int info_handle_file_fprint(
+int info_handle_input_fprint(
      info_handle_t *info_handle,
      libcerror_error_t **error )
 {
+	system_character_t byte_size_string[ 16 ];
+	system_character_t guid_string[ 48 ];
 	uint8_t guid_data[ 16 ];
 
-	libcstring_system_character_t guid_string[ 48 ];
-
-	libfguid_identifier_t *guid                 = NULL;
-	libcstring_system_character_t *value_string = NULL;
-	static char *function                       = "info_handle_file_fprint";
-	size_t value_string_size                    = 0;
-	size64_t media_size                         = 0;
-	uint32_t disk_type                          = 0;
-	uint16_t major_version                      = 0;
-	uint16_t minor_version                      = 0;
-	int result                                  = 0;
+	libfguid_identifier_t *guid      = NULL;
+	system_character_t *value_string = NULL;
+	static char *function            = "info_handle_input_fprint";
+	size64_t media_size              = 0;
+	size_t value_string_size         = 0;
+	uint32_t disk_type               = 0;
+	uint16_t major_version           = 0;
+	uint16_t minor_version           = 0;
+	int result                       = 0;
 
 	if( info_handle == NULL )
 	{
@@ -329,7 +332,7 @@ int info_handle_file_fprint(
 	 "Virtual Hard Disk (VHD) image information:\n" );
 
 	if( libvhdi_file_get_format_version(
-	     info_handle->input_file,
+	     info_handle->input,
 	     &major_version,
 	     &minor_version,
 	     error ) != 1 )
@@ -350,7 +353,7 @@ int info_handle_file_fprint(
 	 minor_version );
 
 	if( libvhdi_file_get_disk_type(
-	     info_handle->input_file,
+	     info_handle->input,
 	     &disk_type,
 	     error ) != 1 )
 	{
@@ -398,7 +401,7 @@ int info_handle_file_fprint(
 	 "\n" );
 
 	if( libvhdi_file_get_media_size(
-	     info_handle->input_file,
+	     info_handle->input,
 	     &media_size,
 	     error ) != 1 )
 	{
@@ -411,11 +414,28 @@ int info_handle_file_fprint(
 
 		goto on_error;
 	}
-	fprintf(
-	 info_handle->notify_stream,
-	 "\tMedia size:\t\t%" PRIu64 " bytes\n",
-	 media_size );
+	result = byte_size_string_create(
+	          byte_size_string,
+	          16,
+	          media_size,
+	          BYTE_SIZE_STRING_UNIT_MEBIBYTE,
+	          NULL );
 
+	if( result == 1 )
+	{
+		fprintf(
+		 info_handle->notify_stream,
+		 "\tMedia size:\t\t%" PRIs_SYSTEM " (%" PRIu64 " bytes)\n",
+		 byte_size_string,
+		 media_size );
+	}
+	else
+	{
+		fprintf(
+		 info_handle->notify_stream,
+		 "\tMedia size:\t\t%" PRIu64 " bytes\n",
+		 media_size );
+	}
 	if( libfguid_identifier_initialize(
 	     &guid,
 	     error ) != 1 )
@@ -430,7 +450,7 @@ int info_handle_file_fprint(
 		goto on_error;
 	}
 	if( libvhdi_file_get_identifier(
-	     info_handle->input_file,
+	     info_handle->input,
 	     guid_data,
 	     16,
 	     error ) != 1 )
@@ -448,7 +468,7 @@ int info_handle_file_fprint(
 	     guid,
 	     guid_data,
 	     16,
-	     LIBFGUID_ENDIAN_LITTLE,
+	     LIBFGUID_ENDIAN_BIG,
 	     error ) != 1 )
 	{
 		libcerror_error_set(
@@ -460,7 +480,7 @@ int info_handle_file_fprint(
 
 		goto on_error;
 	}
-#if defined( LIBCSTRING_HAVE_WIDE_SYSTEM_CHARACTER )
+#if defined( HAVE_WIDE_SYSTEM_CHARACTER )
 	result = libfguid_identifier_copy_to_utf16_string(
 		  guid,
 		  (uint16_t *) guid_string,
@@ -488,11 +508,11 @@ int info_handle_file_fprint(
 	}
 	fprintf(
 	 info_handle->notify_stream,
-	 "\tIdentifier:\t\t%" PRIs_LIBCSTRING_SYSTEM "\n",
+	 "\tIdentifier:\t\t%" PRIs_SYSTEM "\n",
 	 guid_string );
 
 	result = libvhdi_file_get_parent_identifier(
-	          info_handle->input_file,
+	          info_handle->input,
 	          guid_data,
 	          16,
 	          error );
@@ -514,7 +534,7 @@ int info_handle_file_fprint(
 		     guid,
 		     guid_data,
 		     16,
-		     LIBFGUID_ENDIAN_LITTLE,
+		     LIBFGUID_ENDIAN_BIG,
 		     error ) != 1 )
 		{
 			libcerror_error_set(
@@ -526,7 +546,7 @@ int info_handle_file_fprint(
 
 			goto on_error;
 		}
-#if defined( LIBCSTRING_HAVE_WIDE_SYSTEM_CHARACTER )
+#if defined( HAVE_WIDE_SYSTEM_CHARACTER )
 		result = libfguid_identifier_copy_to_utf16_string(
 		          guid,
 		          (uint16_t *) guid_string,
@@ -554,7 +574,7 @@ int info_handle_file_fprint(
 		}
 		fprintf(
 		 info_handle->notify_stream,
-		 "\tParent identifier:\t%" PRIs_LIBCSTRING_SYSTEM "\n",
+		 "\tParent identifier:\t%" PRIs_SYSTEM "\n",
 		 guid_string );
 	}
 	if( libfguid_identifier_free(
@@ -570,14 +590,14 @@ int info_handle_file_fprint(
 
 		goto on_error;
 	}
-#if defined( LIBCSTRING_HAVE_WIDE_SYSTEM_CHARACTER )
+#if defined( HAVE_WIDE_SYSTEM_CHARACTER )
 	result = libvhdi_file_get_utf16_parent_filename_size(
-		  info_handle->input_file,
+		  info_handle->input,
 		  &value_string_size,
 		  error );
 #else
 	result = libvhdi_file_get_utf8_parent_filename_size(
-		  info_handle->input_file,
+		  info_handle->input,
 		  &value_string_size,
 		  error );
 #endif
@@ -595,7 +615,7 @@ int info_handle_file_fprint(
 	else if( result != 0 )
 	{
 		if( ( value_string_size > (size_t) SSIZE_MAX )
-		 || ( ( sizeof( libcstring_system_character_t ) * value_string_size )  > (size_t) SSIZE_MAX ) )
+		 || ( ( sizeof( system_character_t ) * value_string_size )  > (size_t) SSIZE_MAX ) )
 		{
 			libcerror_error_set(
 			 error,
@@ -606,7 +626,7 @@ int info_handle_file_fprint(
 
 			goto on_error;
 		}
-		value_string = libcstring_system_string_allocate(
+		value_string = system_string_allocate(
 				value_string_size );
 
 		if( value_string == NULL )
@@ -620,15 +640,15 @@ int info_handle_file_fprint(
 
 			goto on_error;
 		}
-#if defined( LIBCSTRING_HAVE_WIDE_SYSTEM_CHARACTER )
+#if defined( HAVE_WIDE_SYSTEM_CHARACTER )
 		result = libvhdi_file_get_utf16_parent_filename(
-			  info_handle->input_file,
+			  info_handle->input,
 			  (uint16_t *) value_string,
 			  value_string_size,
 			  error );
 #else
 		result = libvhdi_file_get_utf8_parent_filename(
-			  info_handle->input_file,
+			  info_handle->input,
 			  (uint8_t *) value_string,
 			  value_string_size,
 			  error );

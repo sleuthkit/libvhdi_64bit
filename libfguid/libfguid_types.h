@@ -1,7 +1,7 @@
 /*
  * The internal type definitions
  *
- * Copyright (C) 2010-2016, Joachim Metz <joachim.metz@gmail.com>
+ * Copyright (C) 2010-2018, Joachim Metz <joachim.metz@gmail.com>
  *
  * Refer to AUTHORS for acknowledgements.
  *
@@ -39,9 +39,9 @@ typedef struct libfguid_identifier {}	libfguid_identifier_t;
 #else
 typedef intptr_t libfguid_identifier_t;
 
-#endif
+#endif /* defined( HAVE_DEBUG_OUTPUT ) && !defined( WINAPI ) */
 
-#endif
+#endif /* defined( HAVE_LOCAL_LIBFGUID ) */
 
-#endif
+#endif /* !defined( _LIBFGUID_INTERNAL_TYPES_H ) */
 
